@@ -2,9 +2,30 @@
 
 ## SB Coders Meetup
 
-- [@jesseadametz](https://twitter.com/jesseadametz)
-- [jadametz@invoca.com](mailto:jadametz@invoca.com)
-- https://github.com/jadametz
+```shell
+$ docker run --rm jadametz/sb-coders-demo cat app.rb
+
+require 'json'
+require 'sinatra'
+
+set :bind, '0.0.0.0'
+
+def data
+  JSON.parse(File.read('data.json'))
+end
+
+before do
+  content_type :json
+end
+
+get '/' do
+  data.to_json
+end
+
+get '/number' do
+  { number: data['number'] }.to_json
+end
+```
 
 ---
 class: center, middle, inverse
@@ -291,4 +312,16 @@ docker push jadametz/sb-coders-demo
 ```shell
 hyper run --name sb-coders -p 80:4567 -d jadametz/sb-coders-demo
 hyper fip attach <hyper-fip> sb-coders
+```
+
+---
+class: inverse
+## Questions? Want to chat?
+
+```json
+{
+  "email":   "jadametz@invoca.com",
+  "github":  "https://github.com/jadametz",
+  "twitter": "@jesseadametz"
+}
 ```
