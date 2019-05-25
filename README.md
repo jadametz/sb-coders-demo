@@ -1,5 +1,7 @@
 # sb-coders-demo
 
+[![CircleCI](https://circleci.com/gh/jadametz/sb-coders-demo/tree/master.svg?style=svg)](https://circleci.com/gh/jadametz/sb-coders-demo/tree/master)
+
 Example [Sinatra](http://www.sinatrarb.com/) app based on the [people-in-space](http://api.open-notify.org/astros.json) API and associated slides for SB Coders talk: [Deploying your Ruby app with Docker](slides/CONTENT.md).
  
 ## Getting Started
